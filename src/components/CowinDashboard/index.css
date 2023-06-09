@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.app-container {
+  background-color: #161625;
+  min-height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+.website-logo {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}
+.website {
+  font-size: 24px;
+  color: #2cc6c6;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.heading {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: 'Roboto';
+}
+
+.failure-view {
+  height: 60px;
+  width: 60px;
+}
