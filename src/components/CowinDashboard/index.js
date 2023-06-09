@@ -30,11 +30,7 @@ class CowinDashboard extends Component {
 
   getCowinData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
-    const url = 'https://apis.ccbp.in/covid-vaccination-data'
-    const option = {
-      Method: 'GET',
-    }
-    const response = await fetch(url, option)
+    const response = await fetch('https://apis.ccbp.in/covid-vaccination-data')
 
     if (response.ok === true) {
       const data = await response.json()
@@ -67,11 +63,10 @@ class CowinDashboard extends Component {
 
     return (
       <div>
-        <h1>Vaccination Coverage</h1>
         <VaccinationCoverage vaccination={cowinData.last7DaysVaccination} />
-        <h1>Vaccination by gender</h1>
+
         <VaccinationByGender byGender={cowinData.vaccinationByGender} />
-        <h1>Vaccination by Age</h1>
+
         <VaccinationByAge byAge={cowinData.vaccinationByAge} />
       </div>
     )
@@ -90,6 +85,7 @@ class CowinDashboard extends Component {
 
   renderData = () => {
     const {apiStatus} = this.state
+    console.log(apiStatus)
 
     switch (apiStatus) {
       case apiStatusConstants.success:
@@ -106,6 +102,7 @@ class CowinDashboard extends Component {
   render() {
     const {apiStatus} = this.state
     console.log(apiStatus)
+
     return (
       <div className="app-container">
         <nav className="nav-container">
